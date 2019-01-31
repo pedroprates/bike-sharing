@@ -25,4 +25,4 @@ And the prediction of our network on the test set can be seen on the image below
 ![Prediction](assets/prediction.jpg)
 
 The solution, and the possible problems with the model, are explained both on the Jupyter Notebook on this repository 
-`bike_sharing.ipynb`, and the Neural Network file `network.py`.
+`bike_sharing.ipynb`, and the Neural Network structure and parameters at the file `network.py`.
