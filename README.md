@@ -19,13 +19,13 @@ The solution developed on this notebook is a Neural Network with one hidden laye
 `pandas` for data cleaning). The network loss during it's training can be seen on the image below:
 
 <p align="center">
-  <img src="assets/loss.jpg" height="256" title="Loss Picture">
+  <img src="assets/loss.jpg" height="350" title="Loss Picture">
 </p>
 
 And the prediction of our network on the test set can be seen on the image below:
 
 <p align="center">
-    <img src="assets/prediction.jpg" height="256" title="Prediction">
+    <img src="assets/prediction.jpg" height="350" title="Prediction">
 </p>
 
 The solution, and the possible problems with the model, are explained both on the Jupyter Notebook on this repository 
