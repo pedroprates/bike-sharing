@@ -77,17 +77,17 @@ class NeuralNetwork(object):
         error = y - final_outputs
         
         # TODO: Calculate the hidden layer's contribution to the error
-        hidden_error = self.weights_hidden_to_output * hidden_outputs * (1 - hidden_outputs)
+        hidden_error = hidden_outputs[:, None] * (1 - hidden_outputs[:, None]) * self.weights_hidden_to_output
         
         # TODO: Backpropagated error terms - Replace these values with your calculations.
-        output_error_term = error * 1
+        output_error_term = error
         
         hidden_error_term = output_error_term * hidden_error
         
         # Weight step (input to hidden)
-        delta_weights_i_h += x * hidden_error_term
+        delta_weights_i_h += np.dot(x[:, None], hidden_error_term.T)
         # Weight step (hidden to output)
-        delta_weights_h_o += output_error_term * hidden_outputs
+        delta_weights_h_o += hidden_outputs[:, None] * output_error_term
 
         return delta_weights_i_h, delta_weights_h_o
 
