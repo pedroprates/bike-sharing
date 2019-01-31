@@ -58,35 +58,37 @@ class NeuralNetwork(object):
         
         return final_outputs, hidden_outputs
 
-    def backpropagation(self, final_outputs, hidden_outputs, X, y, delta_weights_i_h, delta_weights_h_o):
+    def backpropagation(self, final_outputs, hidden_outputs, x, y, delta_weights_i_h, delta_weights_h_o):
         """ Implement backpropagation
          
             Arguments
             ---------
             final_outputs: output from forward pass
+            hidden_outputs: output from hidden layer on the forward pass
+            x: input batch
             y: target (i.e. label) batch
             delta_weights_i_h: change in weights from input to hidden layers
             delta_weights_h_o: change in weights from hidden to output layers
 
         """
-        #### Implement the backward pass here ####
-        ### Backward pass ###
+        # Backward pass
 
         # TODO: Output error - Replace this value with your calculations.
-        error = None # Output layer error is the difference between desired target and actual output.
+        error = y - final_outputs
         
         # TODO: Calculate the hidden layer's contribution to the error
-        hidden_error = None
+        hidden_error = self.weights_hidden_to_output * hidden_outputs * (1 - hidden_outputs)
         
         # TODO: Backpropagated error terms - Replace these values with your calculations.
-        output_error_term = None
+        output_error_term = error * 1
         
-        hidden_error_term = None
+        hidden_error_term = output_error_term * hidden_error
         
         # Weight step (input to hidden)
-        delta_weights_i_h += None
+        delta_weights_i_h += self.lr * x * hidden_error_term
         # Weight step (hidden to output)
-        delta_weights_h_o += None
+        delta_weights_h_o += self.lr * output_error_term * hidden_outputs
+
         return delta_weights_i_h, delta_weights_h_o
 
     def update_weights(self, delta_weights_i_h, delta_weights_h_o, n_records):
