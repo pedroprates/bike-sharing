@@ -18,11 +18,15 @@ of 2012.
 The solution developed on this notebook is a Neural Network with one hidden layer, developed using only `numpy` (and
 `pandas` for data cleaning). The network loss during it's training can be seen on the image below:
 
-![TraiValLoss](assets/loss.jpg)
+<p align="center">
+  <img src="assets/loss.jpg" width="256" title="Loss Picture">
+</p>
 
 And the prediction of our network on the test set can be seen on the image below:
 
-![Prediction](assets/prediction.jpg)
+<p align="center">
+    <img src="assets/prediction.jpg" width="256" title="Prediction">
+</p>
 
 The solution, and the possible problems with the model, are explained both on the Jupyter Notebook on this repository 
 `bike_sharing.ipynb`, and the Neural Network structure and parameters at the file `network.py`.
